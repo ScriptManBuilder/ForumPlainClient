@@ -1,5 +1,6 @@
 import { me } from '../api/auth.api.js';
 import { getPosts, createPost, updatePost, deletePost } from '../api/forum.api.js';
+import { escapeHtml } from '../utils.js';
 
 const params = new URLSearchParams(window.location.search);
 const threadId = params.get('id');
@@ -25,8 +26,8 @@ function renderPost(post) {
 
     return `
         <div class="post-item" data-id="${post.id}">
-            <p class="post-author">${post.author || 'anonymous'}${post.is_hidden ? ' (hidden)' : ''}</p>
-            <p class="post-content">${post.content}</p>
+            <p class="post-author">${escapeHtml(post.author || 'anonymous')}${post.is_hidden ? ' (hidden)' : ''}</p>
+            <p class="post-content">${escapeHtml(post.content)}</p>
             ${isOwner ? `
                 <button class="edit-btn" data-id="${post.id}">Edit</button>
                 <button class="delete-btn" data-id="${post.id}">Delete</button>
@@ -58,10 +59,11 @@ function startEdit(postId) {
     const currentText = contentEl.textContent;
 
     postItem.innerHTML = `
-        <textarea class="edit-textarea" rows="3">${currentText}</textarea>
+        <textarea class="edit-textarea" rows="3"></textarea>
         <button class="save-edit-btn">Save</button>
         <button class="cancel-edit-btn">Cancel</button>
     `;
+    postItem.querySelector('.edit-textarea').value = currentText;
 
     postItem.querySelector('.save-edit-btn').addEventListener('click', async () => {
         const newContent = postItem.querySelector('.edit-textarea').value;

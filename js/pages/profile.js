@@ -1,4 +1,5 @@
 import { me, logout } from '../api/auth.api.js';
+import { escapeHtml } from '../utils.js';
 
 const profileInfo = document.getElementById('profile-info');
 const logoutBtn = document.getElementById('logout-btn');
@@ -13,9 +14,9 @@ async function loadProfile() {
         });
 
         profileInfo.innerHTML = `
-            <p><strong>Username:</strong> ${user.username}</p>
-            <p><strong>Email:</strong> ${user.email}</p>
-            <p><strong>Role:</strong> ${user.role}</p>
+            <p><strong>Username:</strong> ${escapeHtml(user.username)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(user.email)}</p>
+            <p><strong>Role:</strong> ${escapeHtml(user.role)}</p>
             <p><strong>Joined:</strong> ${joinedDate}</p>
         `;
     } catch (err) {

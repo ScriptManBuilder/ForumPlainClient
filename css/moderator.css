@@ -1,0 +1,39 @@
+.moderator-page {
+    max-width: 560px;
+    margin: 32px auto 64px;
+}
+
+.page-title {
+    font-size: 26px;
+    margin: 0 0 4px;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0 0 24px;
+}
+
+.inline-form {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.inline-form input {
+    flex: 1;
+}
+
+.status-message {
+    margin: 10px 0 0;
+    font-size: 13px;
+    min-height: 18px;
+}
+
+.status-message.success {
+    color: var(--success);
+}
+
+.status-message.error {
+    color: var(--danger);
+}

@@ -1,5 +1,6 @@
 import { me, logout } from '../api/auth.api.js';
 import { getAvatarColor } from './avatar.js';
+import { escapeHtml } from '../utils.js';
 
 async function renderNavbar() {
     const navbar = document.getElementById('navbar');
@@ -28,9 +29,9 @@ async function renderNavbar() {
             <div class="navbar-auth">
                 <a href="account.html" class="navbar-profile">
                     <span class="avatar" style="background: ${getAvatarColor(user.email)}">
-                        ${user.username.charAt(0).toUpperCase()}
+                        ${escapeHtml(user.username.charAt(0).toUpperCase())}
                     </span>
-                    <span class="navbar-username">${user.username}</span>
+                    <span class="navbar-username">${escapeHtml(user.username)}</span>
                 </a>
                 <button id="logout-btn" class="btn-ghost">Logout</button>
             </div>

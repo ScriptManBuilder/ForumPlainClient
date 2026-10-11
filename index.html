@@ -15,7 +15,10 @@
             <!-- Column 1: Community -->
             <div class="column-left">
                 <div class="panel">
-                    <h3>Community</h3>
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        Community
+                    </h3>
                     <div id="community-stats"></div>
                 </div>
 
@@ -25,7 +28,10 @@
                 </div>
 
                 <div class="panel">
-                    <h3>Quick Links</h3>
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        Quick Links
+                    </h3>
                     <ul class="link-list">
                         <li><a href="#">Forum Rules</a></li>
                         <li><a href="#">Help</a></li>
@@ -37,12 +43,19 @@
 
             <!-- Column 2: Main -->
             <div class="column-main">
-                <div class="banner-placeholder banner-wide">Ad space 970×250</div>
+                <a href="#" class="banner-slot banner-wide">
+                    <img src="assets/banners/banner4-970x250.webp" alt="Advertisement">
+                </a>
 
                 <section class="hero">
-                    <h1>Welcome to the Forum</h1>
-                    <p>Join the discussion, share knowledge, and connect with the community.</p>
-                    <a href="forum.html"><button class="btn-primary">Browse Forum</button></a>
+                    <span class="hero-badge">Community Forum</span>
+                    <h1>Where the discussion happens</h1>
+                    <p>Ask questions, share what you know, and connect with people who get it.</p>
+                    <div class="hero-actions">
+                        <a href="forum.html"><button class="btn-primary">Browse Forum</button></a>
+                        <a href="register.html"><button class="btn-ghost">Join the community</button></a>
+                    </div>
+                    <div class="hero-stats" id="hero-stats"></div>
                 </section>
 
                 <div class="panel">
@@ -50,7 +63,9 @@
                     <div id="recent-threads-list"></div>
                 </div>
 
-                <div class="banner-placeholder banner-strip">Ad space 728×90</div>
+                <a href="#" class="banner-slot banner-strip">
+                    <img src="assets/banners/banner1-728x90.webp" alt="Advertisement">
+                </a>
 
                 <h2 class="section-heading">Categories</h2>
                 <div id="category-grid" class="category-grid"></div>
@@ -58,20 +73,33 @@
 
             <!-- Column 3: Sidebar -->
             <div class="column-right">
-                <div class="banner-placeholder banner-tall">Ad space 300×600</div>
-                <div class="banner-placeholder banner-box">Ad space 300×250</div>
+                <a href="#" class="banner-slot banner-tall">
+                    <img src="assets/banners/banner3-300x600.webp" alt="Advertisement">
+                </a>
+                <a href="#" class="banner-slot banner-box">
+                    <img src="assets/banners/banner2-300x250.webp" alt="Advertisement">
+                </a>
 
                 <div class="panel">
-                    <h3>Forum Statistics</h3>
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        Forum Statistics
+                    </h3>
                     <div id="forum-stats"></div>
                 </div>
 
                 <div class="panel">
                     <h3>Share</h3>
                     <div class="share-row">
-                        <a href="#" aria-label="Share on Instagram">IG</a>
-                        <a href="#" aria-label="Share on Telegram">TG</a>
-                        <a href="#" aria-label="Copy link">🔗</a>
+                        <a href="#" aria-label="Share on Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="Share on Telegram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </a>
+                        <a href="#" aria-label="Copy link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        </a>
                     </div>
                 </div>
             </div>

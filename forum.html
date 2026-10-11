@@ -9,15 +9,22 @@
 <body>
     <nav id="navbar"></nav>
 
-    <div class="container">
-                <h1>Forum</h1>
+    <main class="page-shell forum-page">
+        <h1 class="page-title">Forum</h1>
 
-        <div id="categories-list"></div>
+        <div class="panel category-chip-panel">
+            <h3>Categories</h3>
+            <div id="categories-list" class="category-chips"></div>
+        </div>
 
-        <h2 id="threads-heading" style="display: none;">Threads</h2>
-        <div id="threads-list"></div>
-        <a id="create-thread-link" href="create-thread.html" style="display: none;">+ New thread</a>
-    </div>
+        <div class="panel threads-panel" id="threads-panel" style="display: none;">
+            <div class="threads-panel-header">
+                <h2 id="threads-heading">Threads</h2>
+                <a id="create-thread-link" href="create-thread.html" class="btn-primary-link">+ New thread</a>
+            </div>
+            <div id="threads-list"></div>
+        </div>
+    </main>
 
     <script type="module" src="js/components/navbar.js"></script>
     <script type="module" src="js/pages/forum.js"></script>

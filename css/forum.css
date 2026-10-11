@@ -1,49 +1,147 @@
-#categories-list {
+.forum-page {
+    margin: 32px auto 64px;
+    max-width: 760px;
+}
+
+.page-title {
+    font-size: 26px;
+    margin: 0 0 20px;
+}
+
+.category-chip-panel h3 {
+    margin: 0 0 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.category-chips {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 16px;
 }
 
-.category-btn {
-    background: #e5e7eb;
-    color: #1a1a1a;
+.category-chip {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
-.category-btn:hover {
-    background: #d1d5db;
+.category-chip:hover {
+    border-color: var(--secondary);
+}
+
+.category-chip.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.threads-panel {
+    margin-top: 16px;
+}
+
+.threads-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.threads-panel-header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.btn-primary-link {
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.btn-primary-link:hover {
+    background: var(--primary-hover);
 }
 
 .thread-item {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.thread-author {
-    color: #666;
-    font-size: 13px;
+.thread-item:last-child {
+    border-bottom: none;
 }
+
+.thread-item-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.thread-item a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.thread-item a:hover {
+    color: var(--secondary);
+}
+
+.thread-item-meta {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.empty-state {
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: 12px 0;
+}
+
+/* Post view (thread.html reuses these classes) */
 
 .post-item {
     padding: 12px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border);
 }
 
 .post-author {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 13px;
     margin: 0 0 4px;
+    color: var(--text);
 }
 
 .post-content {
     margin: 0 0 8px;
     white-space: pre-wrap;
+    color: var(--text);
 }
 
 .edit-textarea {
     width: 100%;
     font-family: inherit;
     font-size: 14px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px;
 }

@@ -2,27 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
     <nav id="navbar"></nav>
 
-    <div class="container admin-container">
-                <h1>Admin — Users</h1>
-        <table id="users-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Banned</th>
-                </tr>
-            </thead>
-            <tbody id="users-table-body"></tbody>
-        </table>
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-title">Admin Panel</div>
+
+            <nav class="admin-nav">
+                <a href="#dashboard" data-view="dashboard">Dashboard</a>
+
+                <div class="admin-nav-group">Users</div>
+                <a href="#users" data-view="users">All users</a>
+                <a href="#sessions" data-view="sessions">Active sessions</a>
+
+                <div class="admin-nav-group">Content</div>
+                <span class="admin-nav-disabled">Categories <em>soon</em></span>
+                <span class="admin-nav-disabled">Threads <em>soon</em></span>
+                <span class="admin-nav-disabled">Posts <em>soon</em></span>
+
+                <div class="admin-nav-group">Moderation</div>
+                <a href="moderator.html">Moderator tools</a>
+                <span class="admin-nav-disabled">Reports <em>soon</em></span>
+
+                <div class="admin-nav-group">System</div>
+                <a href="#audit" data-view="audit">Audit log</a>
+                <a href="#logs" data-view="logs">Request logs</a>
+                <span class="admin-nav-disabled">Settings <em>soon</em></span>
+            </nav>
+        </aside>
+
+        <main class="admin-content" id="admin-content"></main>
     </div>
 
     <script type="module" src="js/components/navbar.js"></script>

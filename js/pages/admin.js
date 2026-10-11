@@ -1,85 +1,58 @@
 import { me } from '../api/auth.api.js';
-import { listUsers, changeRole, setBanned } from '../api/admin.api.js';
+import { escapeHtml } from '../utils.js';
+import { renderDashboard } from './admin/dashboard.js';
+import { renderUsers } from './admin/users.js';
+import { renderSessions } from './admin/sessions.js';
+import { renderAudit } from './admin/audit.js';
+import { renderLogs } from './admin/logs.js';
 
-const tableBody = document.getElementById('users-table-body');
-const ROLES = ['user', 'moderator', 'admin'];
+const VIEWS = {
+    dashboard: renderDashboard,
+    users: renderUsers,
+    sessions: renderSessions,
+    audit: renderAudit,
+    logs: renderLogs,
+};
 
-let currentUserId = null;
+const content = document.getElementById('admin-content');
+let currentUser = null;
 
-function renderRow(user) {
-    const isSelf = user.id === currentUserId;
-
-    const roleOptions = ROLES
-        .map(role => `<option value="${role}" ${role === user.role ? 'selected' : ''}>${role}</option>`)
-        .join('');
-
-    return `
-        <tr>
-            <td>${user.id}</td>
-            <td>${user.username}</td>
-            <td>${user.email}</td>
-            <td>
-                <select class="role-select" data-id="${user.id}" ${isSelf ? 'disabled' : ''}>
-                    ${roleOptions}
-                </select>
-            </td>
-            <td>
-                <button
-                    class="ban-btn ${user.is_banned ? 'unban' : ''}"
-                    data-id="${user.id}"
-                    data-banned="${user.is_banned ? 'true' : 'false'}"
-                    ${isSelf ? 'disabled' : ''}
-                >${user.is_banned ? 'Unban' : 'Ban'}</button>
-            </td>
-        </tr>
-    `;
+function getViewName() {
+    const name = window.location.hash.slice(1);
+    return VIEWS[name] ? name : 'dashboard';
 }
 
-async function loadUsers() {
-    const users = await listUsers();
-    tableBody.innerHTML = users.map(renderRow).join('');
+async function renderCurrentView() {
+    const viewName = getViewName();
 
-    tableBody.querySelectorAll('.role-select').forEach(select => {
-        select.addEventListener('change', async () => {
-            try {
-                await changeRole(select.dataset.id, select.value);
-                loadUsers();
-            } catch (err) {
-                alert(err.message);
-                loadUsers();
-            }
-        });
+    document.querySelectorAll('.admin-nav a[data-view]').forEach(link => {
+        link.classList.toggle('active', link.dataset.view === viewName);
     });
 
-    tableBody.querySelectorAll('.ban-btn').forEach(btn => {
-        btn.addEventListener('click', async () => {
-            const isBanned = btn.dataset.banned === 'true';
-            try {
-                await setBanned(btn.dataset.id, !isBanned);
-                loadUsers();
-            } catch (err) {
-                alert(err.message);
-            }
-        });
-    });
+    content.innerHTML = '<p class="admin-muted">Loading…</p>';
+
+    try {
+        await VIEWS[viewName](content, { currentUser });
+    } catch (err) {
+        content.innerHTML = `<p class="error-message">${escapeHtml(err.message)}</p>`;
+    }
 }
 
 async function init() {
-    let user;
     try {
-        user = await me();
+        currentUser = await me();
     } catch (err) {
         window.location.href = 'login.html';
         return;
     }
 
-    if (user.role !== 'admin') {
+    if (currentUser.role !== 'admin') {
         window.location.href = '403.html';
         return;
     }
 
-    currentUserId = user.id;
-    await loadUsers();
+    window.addEventListener('hashchange', renderCurrentView);
+    renderCurrentView();
 }
 
 init();

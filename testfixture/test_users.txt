@@ -4,3 +4,14 @@ Password123!
 
 test@mail.com / password123 — admin
 test2@mail.com / password123 — moderator
+
+--- Seed dump (backend/src/db/seeds/001_test_users.sql) ---
+
+Admin:
+forumTestAdmin@gmail.com / Dp@s3sC0rd123!
+
+Moderator:
+forumTestModerator@gmail.com / ModTest123!
+
+10 regular users (same password for all):
+testuser01@example.com ... testuser10@example.com / password123

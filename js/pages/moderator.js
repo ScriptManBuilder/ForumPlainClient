@@ -6,33 +6,37 @@ const postMessage = document.getElementById('post-message');
 const threadForm = document.getElementById('thread-form');
 const threadMessage = document.getElementById('thread-message');
 
+function showMessage(el, text, status) {
+    el.textContent = text;
+    el.classList.remove('success', 'error');
+    el.classList.add(status);
+}
+
 postForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    postMessage.textContent = '';
 
     const postId = new FormData(postForm).get('postId');
     const hidden = event.submitter.value === 'hide';
 
     try {
         await setPostHidden(postId, hidden);
-        postMessage.textContent = `Post ${postId} ${hidden ? 'hidden' : 'unhidden'}.`;
+        showMessage(postMessage, `Post ${postId} ${hidden ? 'hidden' : 'unhidden'}.`, 'success');
     } catch (err) {
-        postMessage.textContent = err.message;
+        showMessage(postMessage, err.message, 'error');
     }
 });
 
 threadForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    threadMessage.textContent = '';
 
     const threadId = new FormData(threadForm).get('threadId');
     const locked = event.submitter.value === 'lock';
 
     try {
         await setThreadLocked(threadId, locked);
-        threadMessage.textContent = `Thread ${threadId} ${locked ? 'locked' : 'unlocked'}.`;
+        showMessage(threadMessage, `Thread ${threadId} ${locked ? 'locked' : 'unlocked'}.`, 'success');
     } catch (err) {
-        threadMessage.textContent = err.message;
+        showMessage(threadMessage, err.message, 'error');
     }
 });
 

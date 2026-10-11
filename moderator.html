@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <title>Moderator Tools</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/moderator.css">
 </head>
 <body>
     <nav id="navbar"></nav>
 
-    <div class="container">
-                <h1>Moderator Tools</h1>
+    <main class="page-shell moderator-page">
+        <h1 class="page-title">Moderator Tools</h1>
+        <p class="page-subtitle">Hide posts or lock threads by their ID.</p>
 
-        <h2>Hide / Unhide Post</h2>
-        <form id="post-form">
-            <input type="number" name="postId" placeholder="Post ID" required min="1">
-            <button type="submit" name="action" value="hide">Hide</button>
-            <button type="submit" name="action" value="unhide">Unhide</button>
-        </form>
-        <p class="error-message" id="post-message"></p>
+        <div class="panel">
+            <h3>Hide / Unhide Post</h3>
+            <form id="post-form" class="inline-form">
+                <input type="number" name="postId" placeholder="Post ID" required min="1">
+                <button type="submit" name="action" value="hide" class="btn-danger">Hide</button>
+                <button type="submit" name="action" value="unhide" class="btn-success">Unhide</button>
+            </form>
+            <p class="status-message" id="post-message"></p>
+        </div>
 
-        <h2>Lock / Unlock Thread</h2>
-        <form id="thread-form">
-            <input type="number" name="threadId" placeholder="Thread ID" required min="1">
-            <button type="submit" name="action" value="lock">Lock</button>
-            <button type="submit" name="action" value="unlock">Unlock</button>
-        </form>
-        <p class="error-message" id="thread-message"></p>
-    </div>
+        <div class="panel">
+            <h3>Lock / Unlock Thread</h3>
+            <form id="thread-form" class="inline-form">
+                <input type="number" name="threadId" placeholder="Thread ID" required min="1">
+                <button type="submit" name="action" value="lock" class="btn-danger">Lock</button>
+                <button type="submit" name="action" value="unlock" class="btn-success">Unlock</button>
+            </form>
+            <p class="status-message" id="thread-message"></p>
+        </div>
+    </main>
 
     <script type="module" src="js/components/navbar.js"></script>
     <script type="module" src="js/pages/moderator.js"></script>

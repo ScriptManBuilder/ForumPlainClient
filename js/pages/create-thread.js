@@ -1,5 +1,6 @@
 import { me } from '../api/auth.api.js';
 import { getCategories, createThread } from '../api/forum.api.js';
+import { escapeHtml } from '../utils.js';
 
 const params = new URLSearchParams(window.location.search);
 const preselectedCategoryId = params.get('categoryId');
@@ -18,7 +19,7 @@ async function init() {
 
     const categories = await getCategories();
     categorySelect.innerHTML = categories
-        .map(category => `<option value="${category.id}">${category.name}</option>`)
+        .map(category => `<option value="${category.id}">${escapeHtml(category.name)}</option>`)
         .join('');
 
     if (preselectedCategoryId) {

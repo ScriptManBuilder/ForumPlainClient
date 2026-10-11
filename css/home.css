@@ -25,6 +25,15 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.panel h3 svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
 }
 
 .stat-row {
@@ -91,24 +100,24 @@
     margin-bottom: 16px;
 }
 
-.banner-wide {
-    height: 110px;
+.banner-slot {
+    display: block;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.banner-strip {
-    height: 70px;
-}
-
-.banner-tall {
-    height: 300px;
-}
-
-.banner-box {
-    height: 150px;
+.banner-slot img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .recent-thread-item {
-    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -116,10 +125,20 @@
     border-bottom: none;
 }
 
+.recent-thread-body {
+    flex: 1;
+    min-width: 0;
+}
+
 .recent-thread-item a {
     text-decoration: none;
     color: var(--text);
     font-size: 14px;
+    font-weight: 500;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .recent-thread-item a:hover {
@@ -127,9 +146,36 @@
 }
 
 .recent-thread-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.category-tag {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.recent-thread-meta .dot {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.recent-thread-meta .author-name {
     color: var(--text-muted);
     font-size: 12px;
-    margin-top: 2px;
+}
+
+.recent-thread-meta .time {
+    margin-left: auto;
+    color: var(--text-muted);
+    font-size: 11px;
+    flex-shrink: 0;
 }
 
 .share-row {
@@ -138,8 +184,8 @@
 }
 
 .share-row a {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: var(--bg);
     border: 1px solid var(--border);
@@ -147,9 +193,16 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 14px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.share-row a svg {
+    width: 15px;
+    height: 15px;
 }
 
 .share-row a:hover {
     border-color: var(--secondary);
+    color: var(--secondary);
 }
