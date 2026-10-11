@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moderator Tools</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div class="container">
+                <h1>Moderator Tools</h1>
+
+        <h2>Hide / Unhide Post</h2>
+        <form id="post-form">
+            <input type="number" name="postId" placeholder="Post ID" required min="1">
+            <button type="submit" name="action" value="hide">Hide</button>
+            <button type="submit" name="action" value="unhide">Unhide</button>
+        </form>
+        <p class="error-message" id="post-message"></p>
+
+        <h2>Lock / Unlock Thread</h2>
+        <form id="thread-form">
+            <input type="number" name="threadId" placeholder="Thread ID" required min="1">
+            <button type="submit" name="action" value="lock">Lock</button>
+            <button type="submit" name="action" value="unlock">Unlock</button>
+        </form>
+        <p class="error-message" id="thread-message"></p>
+    </div>
+
+    <script type="module" src="js/components/navbar.js"></script>
+    <script type="module" src="js/pages/moderator.js"></script>
+</body>
+</html>

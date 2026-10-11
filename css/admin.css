@@ -1,0 +1,37 @@
+.admin-container {
+    max-width: 800px;
+}
+
+#users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+#users-table th,
+#users-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+#users-table select {
+    padding: 4px;
+}
+
+.ban-btn {
+    background: #dc2626;
+}
+
+.ban-btn:hover {
+    background: #b91c1c;
+}
+
+.ban-btn.unban {
+    background: #16a34a;
+}
+
+.ban-btn.unban:hover {
+    background: #15803d;
+}

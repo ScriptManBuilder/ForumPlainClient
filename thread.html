@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thread</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forum.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div class="container">
+                <h1>Thread</h1>
+
+        <div id="posts-list"></div>
+
+        <div id="post-form-wrapper" style="display: none;">
+            <h2>Reply</h2>
+            <form id="post-form">
+                <textarea name="content" rows="4" placeholder="Write a reply..." required></textarea>
+                <p class="error-message" id="error-message"></p>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        <p id="login-to-reply" style="display: none;"><a href="login.html">Login</a> to reply.</p>
+    </div>
+
+    <script type="module" src="js/components/navbar.js"></script>
+    <script type="module" src="js/pages/thread.js"></script>
+</body>
+</html>

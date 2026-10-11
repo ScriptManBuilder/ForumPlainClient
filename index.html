@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <main class="page-shell">
+        <div class="home-layout">
+
+            <!-- Column 1: Community -->
+            <div class="column-left">
+                <div class="panel">
+                    <h3>Community</h3>
+                    <div id="community-stats"></div>
+                </div>
+
+                <div class="panel">
+                    <h3>New Members</h3>
+                    <ul class="member-list" id="new-members-list"></ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Quick Links</h3>
+                    <ul class="link-list">
+                        <li><a href="#">Forum Rules</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Advertise</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Column 2: Main -->
+            <div class="column-main">
+                <div class="banner-placeholder banner-wide">Ad space 970×250</div>
+
+                <section class="hero">
+                    <h1>Welcome to the Forum</h1>
+                    <p>Join the discussion, share knowledge, and connect with the community.</p>
+                    <a href="forum.html"><button class="btn-primary">Browse Forum</button></a>
+                </section>
+
+                <div class="panel">
+                    <h3>Recent Threads</h3>
+                    <div id="recent-threads-list"></div>
+                </div>
+
+                <div class="banner-placeholder banner-strip">Ad space 728×90</div>
+
+                <h2 class="section-heading">Categories</h2>
+                <div id="category-grid" class="category-grid"></div>
+            </div>
+
+            <!-- Column 3: Sidebar -->
+            <div class="column-right">
+                <div class="banner-placeholder banner-tall">Ad space 300×600</div>
+                <div class="banner-placeholder banner-box">Ad space 300×250</div>
+
+                <div class="panel">
+                    <h3>Forum Statistics</h3>
+                    <div id="forum-stats"></div>
+                </div>
+
+                <div class="panel">
+                    <h3>Share</h3>
+                    <div class="share-row">
+                        <a href="#" aria-label="Share on Instagram">IG</a>
+                        <a href="#" aria-label="Share on Telegram">TG</a>
+                        <a href="#" aria-label="Copy link">🔗</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html">Home</a>
+        <a href="forum.html">Forum</a>
+        <a href="#">Rules</a>
+        <a href="#">Advertising</a>
+        <a href="#">Help</a>
+        <a href="#">Contact</a>
+        <p>&copy; 2026 Forum Project</p>
+    </footer>
+
+    <script type="module" src="js/components/navbar.js"></script>
+    <script type="module" src="js/pages/home.js"></script>
+</body>
+</html>

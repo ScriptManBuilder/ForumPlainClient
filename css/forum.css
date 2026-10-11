@@ -1,0 +1,49 @@
+#categories-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.category-btn {
+    background: #e5e7eb;
+    color: #1a1a1a;
+}
+
+.category-btn:hover {
+    background: #d1d5db;
+}
+
+.thread-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.thread-author {
+    color: #666;
+    font-size: 13px;
+}
+
+.post-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.post-author {
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0 0 4px;
+}
+
+.post-content {
+    margin: 0 0 8px;
+    white-space: pre-wrap;
+}
+
+.edit-textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+}

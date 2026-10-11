@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div class="container admin-container">
+                <h1>Admin — Users</h1>
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Banned</th>
+                </tr>
+            </thead>
+            <tbody id="users-table-body"></tbody>
+        </table>
+    </div>
+
+    <script type="module" src="js/components/navbar.js"></script>
+    <script type="module" src="js/pages/admin.js"></script>
+</body>
+</html>

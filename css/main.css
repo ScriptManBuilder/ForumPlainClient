@@ -1,0 +1,251 @@
+:root {
+    --bg: #07111F;
+    --surface: #0F1C2E;
+    --surface-hover: #16283d;
+    --border: #1d2e42;
+    --primary: #2563EB;
+    --primary-hover: #1d4ed8;
+    --secondary: #60A5FA;
+    --text: #CBD5E1;
+    --text-muted: #7c8ba1;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --success: #16a34a;
+    --success-hover: #15803d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+a {
+    color: var(--secondary);
+}
+
+.page-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.container {
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input,
+select,
+textarea {
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button {
+    padding: 8px 14px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 14px;
+    min-height: 18px;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar-links a:hover {
+    color: var(--secondary);
+}
+
+.navbar-auth {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.navbar-auth .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.navbar-auth .btn-ghost:hover {
+    background: var(--surface-hover);
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.navbar-username {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.navbar-profile:hover .navbar-username {
+    color: var(--secondary);
+}
+
+.avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Hero */
+
+.hero {
+    padding: 64px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.hero .btn-primary {
+    font-size: 15px;
+    padding: 10px 24px;
+}
+
+/* Category cards */
+
+.section-heading {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.category-card {
+    display: block;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.category-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--secondary);
+}
+
+.category-card h3 {
+    margin: 0 0 6px;
+    color: var(--secondary);
+    font-size: 16px;
+}
+
+.category-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Footer */
+
+.site-footer {
+    margin-top: 48px;
+    padding: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+.site-footer a {
+    color: var(--text-muted);
+    margin: 0 8px;
+}
+
+.site-footer a:hover {
+    color: var(--secondary);
+}

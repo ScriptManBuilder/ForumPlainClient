@@ -1,0 +1,6 @@
+test01
+test01@gmail.com
+Password123!
+
+test@mail.com / password123 — admin
+test2@mail.com / password123 — moderator
